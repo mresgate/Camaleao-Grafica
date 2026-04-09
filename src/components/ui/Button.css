@@ -1,0 +1,87 @@
+/* src/components/ui/Button.css */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background var(--transition-fast);
+}
+
+.btn:hover::after { background: rgba(255, 255, 255, 0.05); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Variants */
+.btn--gold {
+  background: var(--grad-gold);
+  color: #0A0A0F;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+}
+.btn--gold:hover { box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4); }
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+}
+.btn--outline:hover { background: rgba(201, 168, 76, 0.1); }
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-light);
+}
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+.btn--danger {
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #F87171;
+}
+.btn--danger:hover { background: rgba(220, 38, 38, 0.25); }
+
+.btn--whatsapp {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+}
+.btn--whatsapp:hover { box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4); }
+
+/* Sizes */
+.btn--sm { font-size: 0.82rem; padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); }
+.btn--md { font-size: 0.95rem; padding: 0.75rem 1.5rem; }
+.btn--lg { font-size: 1.05rem; padding: 1rem 2rem; border-radius: var(--radius-lg); }
+.btn--xl { font-size: 1.15rem; padding: 1.15rem 2.5rem; border-radius: var(--radius-lg); }
+
+.btn--full { width: 100%; }
+
+/* Spinner */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin-slow 0.7s linear infinite;
+}
+
+.btn-icon, .btn-icon-right {
+  display: flex;
+  align-items: center;
+}

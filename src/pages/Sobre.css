@@ -1,0 +1,91 @@
+/* src/pages/Sobre.css */
+.sobre-page { min-height: 100vh; }
+
+.sobre-hero {
+  position: relative; padding: 7rem 0 5rem; overflow: hidden;
+}
+.sobre-hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 100% at 30% 0%, rgba(201,168,76,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.sobre-hero-sub { font-size: 1.1rem; max-width: 560px; line-height: 1.8; margin-top: 1.25rem; }
+
+/* Missão */
+.sobre-missao-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.sobre-missao-text { display: flex; flex-direction: column; gap: 1rem; }
+.sobre-missao-text h2 { margin-bottom: 0.5rem; }
+.sobre-checks { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; }
+.sobre-check { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; }
+
+.sobre-info-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.sobre-info-card {
+  padding: 1.75rem 1.25rem; border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem;
+  transition: all var(--transition-md);
+}
+.sobre-info-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.35); }
+.sobre-info-icon { color: var(--color-gold); }
+.sobre-info-val { font-family: var(--font-display); font-size: 2rem; font-weight: 900; line-height: 1; }
+.sobre-info-label { font-size: 0.82rem; color: var(--color-text-muted); }
+
+/* Valores */
+.sobre-valores-section { position: relative; }
+.sobre-valores-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(13,27,42,0.9) 0%, transparent 100%);
+  pointer-events: none;
+}
+.sobre-valores-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; position: relative; z-index: 1;
+}
+.sobre-valor-card { padding: 2rem 1.5rem; border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 0.85rem; transition: all var(--transition-md); }
+.sobre-valor-icon { font-size: 2.2rem; }
+.sobre-valor-titulo { font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
+.sobre-valor-desc { font-size: 0.87rem; line-height: 1.7; }
+
+/* Timeline */
+.sobre-timeline {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; position: relative;
+}
+.sobre-timeline::before {
+  content: ''; position: absolute;
+  left: 50%; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(180deg, var(--color-gold), transparent);
+  transform: translateX(-50%);
+}
+.sobre-tl-item { display: flex; flex-direction: column; gap: 1rem; position: relative; }
+.sobre-tl-item:nth-child(odd) { align-items: flex-end; padding-right: 2rem; }
+.sobre-tl-item:nth-child(even) { align-items: flex-start; padding-left: 2rem; margin-top: 3rem; }
+.sobre-tl-card { padding: 1.5rem; border-radius: var(--radius-lg); max-width: 380px; }
+.sobre-tl-ano { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; display: block; }
+.sobre-tl-evento { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin: 0.4rem 0; }
+.sobre-tl-desc { font-size: 0.87rem; line-height: 1.7; }
+.sobre-tl-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--color-gold); border: 3px solid var(--color-bg);
+  position: absolute; top: 1.5rem;
+  box-shadow: 0 0 15px rgba(201,168,76,0.5);
+}
+.sobre-tl-item:nth-child(odd) .sobre-tl-dot { right: -6px; }
+.sobre-tl-item:nth-child(even) .sobre-tl-dot { left: -6px; }
+
+@media (max-width: 1000px) {
+  .sobre-valores-grid { grid-template-columns: repeat(2, 1fr); }
+  .sobre-missao-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .sobre-info-cards { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .sobre-timeline { grid-template-columns: 1fr; }
+  .sobre-timeline::before { display: none; }
+  .sobre-tl-item:nth-child(odd), .sobre-tl-item:nth-child(even) { align-items: flex-start; padding: 0; margin: 0; }
+  .sobre-tl-dot { display: none; }
+}
+@media (max-width: 540px) {
+  .sobre-info-cards { grid-template-columns: 1fr 1fr; }
+  .sobre-valores-grid { grid-template-columns: 1fr; }
+}

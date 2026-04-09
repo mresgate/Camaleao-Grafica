@@ -1,0 +1,81 @@
+/* src/pages/Contacto.css */
+.contacto-page { min-height: 100vh; }
+
+.contacto-hero { position: relative; padding: 7rem 0 4rem; overflow: hidden; }
+.contacto-hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 100% at 70% 0%, rgba(201,168,76,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.contacto-hero-sub { font-size: 1.05rem; max-width: 520px; line-height: 1.8; margin-top: 1.25rem; }
+
+.contacto-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+/* Info */
+.contacto-info-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; }
+.contacto-items { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+.contacto-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.25rem; border-radius: var(--radius-lg);
+}
+.contacto-item-icon {
+  width: 48px; height: 48px; min-width: 48px; border-radius: var(--radius-md);
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center; color: var(--color-gold);
+}
+.contacto-item-titulo { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: 0.3rem; }
+.contacto-item-valor { font-size: 0.9rem; color: var(--color-text); line-height: 1.6; }
+.contacto-item-valor--link { color: var(--color-gold); transition: color var(--transition-fast); }
+.contacto-item-valor--link:hover { color: var(--color-gold-light); }
+
+/* WhatsApp CTA */
+.contacto-whatsapp {
+  display: flex; align-items: center; gap: 1rem; padding: 1.25rem;
+  border-radius: var(--radius-lg); margin-bottom: 1.25rem; text-decoration: none;
+  border-color: rgba(37,211,102,0.25) !important; transition: all var(--transition-fast);
+}
+.contacto-whatsapp:hover { border-color: #25D366 !important; background: rgba(37,211,102,0.08); }
+.contacto-wa-icon {
+  width: 52px; height: 52px; min-width: 52px;
+  background: rgba(37,211,102,0.12); border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center; color: #25D366;
+}
+.contacto-wa-titulo { font-family: var(--font-display); font-weight: 700; color: var(--color-text); }
+.contacto-wa-sub { font-size: 0.8rem; color: var(--color-text-muted); }
+.contacto-wa-btn {
+  margin-left: auto; white-space: nowrap;
+  background: #25D366; color: white; font-size: 0.82rem; font-weight: 700;
+  padding: 0.45rem 1rem; border-radius: var(--radius-full);
+}
+
+/* Map */
+.contacto-map {
+  height: 160px; border-radius: var(--radius-lg); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.contacto-map-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;
+}
+.contacto-map-inner span { font-family: var(--font-display); font-weight: 600; }
+.contacto-map-link { font-size: 0.82rem; color: var(--color-gold); }
+
+/* Form */
+.contacto-form { padding: 2rem; border-radius: var(--radius-xl); }
+.contacto-form-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 1.75rem; }
+.contacto-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.contacto-form textarea { resize: vertical; min-height: 140px; }
+.contacto-form-obs { font-size: 0.78rem; color: var(--color-text-faint); margin-top: 0.75rem; text-align: center; }
+
+/* Enviado */
+.contacto-enviado {
+  padding: 3rem; border-radius: var(--radius-xl); text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 1.25rem;
+}
+.contacto-enviado h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; }
+.contacto-enviado p { color: var(--color-text-muted); line-height: 1.7; }
+
+@media (max-width: 900px) { .contacto-layout { grid-template-columns: 1fr; } }
+@media (max-width: 540px) {
+  .contacto-form-grid { grid-template-columns: 1fr; }
+  .form-field--full { grid-column: 1; }
+}

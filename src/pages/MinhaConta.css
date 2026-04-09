@@ -1,0 +1,119 @@
+/* src/pages/MinhaConta.css */
+.conta-page { padding: 3rem 0 5rem; min-height: 100vh; }
+
+/* Auth */
+.conta-auth-wrap { max-width: 460px; margin: 4rem auto; }
+.conta-auth-card { padding: 2.5rem; border-radius: var(--radius-xl); }
+.conta-auth-logo { font-size: 3rem; text-align: center; margin-bottom: 1rem; filter: drop-shadow(0 0 15px rgba(201,168,76,0.5)); }
+.conta-auth-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 1.5rem; }
+.conta-auth-tabs {
+  display: flex; border-radius: var(--radius-md); overflow: hidden;
+  border: 1px solid var(--color-border); margin-bottom: 1.75rem;
+}
+.conta-auth-tab {
+  flex: 1; padding: 0.7rem; font-family: var(--font-display); font-weight: 600;
+  font-size: 0.9rem; background: transparent; border: none; cursor: pointer;
+  color: var(--color-text-muted); transition: all var(--transition-fast);
+}
+.conta-auth-tab.active { background: rgba(201,168,76,0.12); color: var(--color-gold); }
+.conta-auth-form { display: flex; flex-direction: column; gap: 1rem; }
+.conta-show-senha {
+  position: absolute; right: 0.9rem; bottom: 0.85rem;
+  background: transparent; border: none; color: var(--color-text-muted);
+  cursor: pointer; display: flex; align-items: center;
+}
+.conta-auth-erro {
+  padding: 0.65rem 1rem; background: rgba(220,38,38,0.1);
+  border: 1px solid rgba(220,38,38,0.3); border-radius: var(--radius-sm);
+  font-size: 0.85rem; color: #F87171;
+}
+.conta-auth-hint {
+  font-size: 0.78rem; color: var(--color-text-faint);
+  background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15);
+  padding: 0.5rem 0.85rem; border-radius: var(--radius-sm); text-align: center;
+}
+
+/* Layout */
+.conta-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; }
+
+/* Sidebar */
+.conta-sidebar { padding: 1.75rem; border-radius: var(--radius-xl); position: sticky; top: 110px; }
+.conta-user-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--color-border); }
+.conta-avatar {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--grad-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--color-bg);
+  flex-shrink: 0;
+}
+.conta-user-nome { font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; }
+.conta-user-email { font-size: 0.78rem; color: var(--color-text-muted); }
+
+.conta-nav { display: flex; flex-direction: column; gap: 0.3rem; }
+.conta-nav-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.75rem 1rem; border-radius: var(--radius-md);
+  font-size: 0.9rem; font-weight: 500; color: var(--color-text-muted);
+  background: transparent; border: none; cursor: pointer;
+  transition: all var(--transition-fast); text-align: left; width: 100%;
+}
+.conta-nav-item:hover { background: rgba(201,168,76,0.07); color: var(--color-gold); }
+.conta-nav-item.active { background: rgba(201,168,76,0.12); color: var(--color-gold); font-weight: 700; }
+.conta-nav-arrow { margin-left: auto; opacity: 0.4; }
+.conta-nav-item--logout { color: #F87171 !important; margin-top: 1rem; border-top: 1px solid var(--color-border); padding-top: 1.25rem; border-radius: 0; }
+
+/* Content */
+.conta-content { min-height: 500px; }
+.conta-section-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; }
+
+/* Pedidos */
+.pedidos-lista { display: flex; flex-direction: column; gap: 1rem; }
+.pedido-card { padding: 1.5rem; border-radius: var(--radius-lg); }
+.pedido-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+.pedido-id { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+.pedido-data { font-size: 0.78rem; color: var(--color-text-muted); }
+.pedido-status {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: var(--radius-full);
+}
+.pedido-status--green { background: rgba(46,204,113,0.12); border: 1px solid rgba(46,204,113,0.3); color: var(--color-accent); }
+.pedido-status--gold  { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: var(--color-gold); }
+.pedido-status--blue  { background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: #60A5FA; }
+.pedido-item { display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--color-text-muted); padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.pedido-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.pedido-total { font-size: 0.9rem; }
+.pedido-rastreio { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--color-text-muted); }
+.pedido-rastreio span { color: var(--color-gold); font-weight: 600; }
+
+/* Arquivos */
+.arquivos-upload-area {
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  padding: 3rem; border: 2px dashed rgba(201,168,76,0.3); border-radius: var(--radius-xl);
+  background: rgba(201,168,76,0.04); text-align: center; margin-bottom: 1.5rem;
+  cursor: pointer; transition: all var(--transition-fast);
+}
+.arquivos-upload-area:hover { border-color: var(--color-gold); background: rgba(201,168,76,0.07); }
+.arquivos-upload-link { color: var(--color-gold); font-weight: 600; cursor: pointer; }
+.arquivos-hint { font-size: 0.78rem; color: var(--color-text-faint); }
+.arquivos-lista { display: flex; flex-direction: column; gap: 0.75rem; }
+.arquivo-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-radius: var(--radius-lg); }
+.arquivo-icon { font-size: 1.5rem; }
+.arquivo-info { flex: 1; }
+.arquivo-nome { display: block; font-size: 0.9rem; font-weight: 600; color: var(--color-text); }
+.arquivo-meta { font-size: 0.75rem; color: var(--color-text-muted); }
+
+/* Endereços */
+.endereco-card { padding: 1.5rem; border-radius: var(--radius-lg); margin-bottom: 1rem; display: flex; align-items: center; gap: 1.5rem; }
+.endereco-badge { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: var(--color-gold); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); white-space: nowrap; }
+.endereco-texto { flex: 1; font-size: 0.88rem; line-height: 1.6; color: var(--color-text-muted); }
+
+/* Perfil */
+.perfil-form { padding: 2rem; border-radius: var(--radius-xl); display: flex; flex-direction: column; gap: 1.5rem; }
+
+@media (max-width: 900px) {
+  .conta-layout { grid-template-columns: 1fr; }
+  .conta-sidebar { position: static; }
+  .conta-nav { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+  .conta-nav-item { padding: 0.5rem 0.85rem; font-size: 0.82rem; }
+  .conta-nav-item--logout { margin-top: 0; border-top: none; padding-top: 0.5rem; }
+  .conta-nav-arrow { display: none; }
+}
