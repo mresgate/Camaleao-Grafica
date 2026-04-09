@@ -1,5 +1,6 @@
 // src/pages/MinhaConta.jsx
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Package, Upload, MapPin, LogOut, Eye, EyeOff, Truck, Check, Clock, ChevronRight } from 'lucide-react';
 import { useAuthStore } from '../store/authStore';
@@ -13,6 +14,7 @@ const statusColor = { 'Entregue': 'green', 'Em produção': 'gold', 'Aguardando 
 export default function MinhaConta() {
   const { isLoggedIn, usuario, login, register, logout } = useAuthStore();
   const { pedidos } = useOrderStore();
+  const navigate = useNavigate();
   const [authMode, setAuthMode] = useState('login'); // 'login' | 'register'
   const [tabAtiva, setTabAtiva] = useState('pedidos');
   const [showSenha, setShowSenha] = useState(false);
@@ -37,6 +39,11 @@ export default function MinhaConta() {
       register({ nome: form.nome, email: form.email, telefone: form.telefone });
     }
     setLoading(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
   if (!isLoggedIn) {
@@ -134,7 +141,7 @@ export default function MinhaConta() {
                   {tab.icon} {tab.label} <ChevronRight size={14} className="conta-nav-arrow" />
                 </button>
               ))}
-              <button className="conta-nav-item conta-nav-item--logout" onClick={logout}>
+              <button className="conta-nav-item conta-nav-item--logout" onClick={handleLogout}>
                 <LogOut size={18} /> Sair da Conta
               </button>
             </nav>

@@ -104,7 +104,7 @@ export default function Produto() {
             {/* Rating */}
             <div className="produto-rating">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} fill={i < Math.round(produto.avaliacoes) ? '#C9A84C' : 'none'} color={i < Math.round(produto.avaliacoes) ? '#C9A84C' : '#555'} />
+                <Star key={i} size={16} fill={i < Math.round(produto.avaliacoes) ? '#00C26B' : 'none'} color={i < Math.round(produto.avaliacoes) ? '#00C26B' : '#555'} />
               ))}
               <span className="produto-rating-val">{produto.avaliacoes}</span>
               <span className="produto-rating-count">({produto.numAvaliacoes} avaliações)</span>
@@ -263,7 +263,7 @@ export default function Produto() {
                     <div>
                       <div className="produto-rating" style={{ marginBottom: '0.3rem' }}>
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={20} fill={i < Math.round(produto.avaliacoes) ? '#C9A84C' : 'none'} color={i < Math.round(produto.avaliacoes) ? '#C9A84C' : '#555'} />
+                          <Star key={i} size={20} fill={i < Math.round(produto.avaliacoes) ? '#00C26B' : 'none'} color={i < Math.round(produto.avaliacoes) ? '#00C26B' : '#555'} />
                         ))}
                       </div>
                       <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>{produto.numAvaliacoes} avaliações</span>

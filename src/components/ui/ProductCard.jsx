@@ -59,7 +59,7 @@ export default function ProductCard({ produto, index = 0 }) {
                 key={i}
                 size={13}
                 className={i < Math.round(produto.avaliacoes) ? 'star-filled' : 'star-empty'}
-                fill={i < Math.round(produto.avaliacoes) ? '#C9A84C' : 'none'}
+                fill={i < Math.round(produto.avaliacoes) ? '#00C26B' : 'none'}
               />
             ))}
             <span className="product-card-rating-count">({produto.numAvaliacoes})</span>

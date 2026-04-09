@@ -1,5 +1,6 @@
 // src/pages/Admin.jsx
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart2, Package, Users, ShoppingBag, Settings, TrendingUp, Eye, Edit, Trash2, Plus, Lock } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
@@ -44,6 +45,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 export default function Admin() {
   const { isAdmin, isLoggedIn, login, logout } = useAuthStore();
   const { pedidos, atualizarStatus } = useOrderStore();
+  const navigate = useNavigate();
   const [tab, setTab] = useState('dashboard');
   const [adminEmail, setAdminEmail] = useState('');
   const [adminSenha, setAdminSenha] = useState('');
@@ -53,6 +55,11 @@ export default function Admin() {
     const res = login(adminEmail, adminSenha);
     if (!res.ok || !res.admin) setAdminErro('Acesso negado. Use as credenciais de administrador.');
     else setAdminErro('');
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
   if (!isLoggedIn || !isAdmin) {
@@ -93,7 +100,7 @@ export default function Admin() {
             </span>
             <span className="admin-topbar-title">Painel Admin <span className="admin-topbar-badge">ADMIN</span></span>
           </div>
-          <button className="admin-logout-btn" onClick={logout}>Sair</button>
+          <button className="admin-logout-btn" onClick={handleLogout}>Sair</button>
         </div>
 
         <div className="admin-layout">
@@ -129,15 +136,15 @@ export default function Admin() {
                       <AreaChart data={vendasMensais} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#C9A84C" stopOpacity={0.35} />
-                            <stop offset="95%" stopColor="#C9A84C" stopOpacity={0} />
+                            <stop offset="5%" stopColor="#00C26B" stopOpacity={0.35} />
+                            <stop offset="95%" stopColor="#00C26B" stopOpacity={0} />
                           </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
                         <XAxis dataKey="mes" tick={{ fill: '#888', fontSize: 12 }} axisLine={false} tickLine={false} />
                         <YAxis tick={{ fill: '#888', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `R$${(v/1000).toFixed(0)}k`} />
                         <Tooltip content={<CustomTooltip />} />
-                        <Area type="monotone" dataKey="vendas" stroke="#C9A84C" strokeWidth={2} fill="url(#goldGrad)" />
+                        <Area type="monotone" dataKey="vendas" stroke="#00C26B" strokeWidth={2} fill="url(#goldGrad)" />
                       </AreaChart>
                     </ResponsiveContainer>
                   </div>

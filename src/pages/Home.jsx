@@ -229,7 +229,7 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i}
-                whileHover={{ y: -8, borderColor: 'rgba(201,168,76,0.5)' }}
+                whileHover={{ y: -8, borderColor: 'rgba(0,194,107,0.5)' }}
               >
                 <div className="diferencial-icon">{d.icon}</div>
                 <h4 className="diferencial-titulo">{d.titulo}</h4>
@@ -337,7 +337,7 @@ export default function Home() {
               >
                 <div className="depoimento-stars">
                   {[...Array(dep.nota)].map((_, s) => (
-                    <Star key={s} size={14} fill="#C9A84C" color="#C9A84C" />
+                    <Star key={s} size={14} fill="#00C26B" color="#00C26B" />
                   ))}
                 </div>
                 <p className="depoimento-texto">"{dep.texto}"</p>

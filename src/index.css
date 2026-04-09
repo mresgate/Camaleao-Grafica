@@ -9,18 +9,18 @@
   --color-bg-deep:      #020308;
   --color-surface:      #0D1B2A;
   --color-surface-alt:  #111827;
-  --color-border:       rgba(201,168,76,0.18);
+  --color-border:       rgba(0,194,107,0.18);
   --color-border-light: rgba(255,255,255,0.07);
 
-  /* Dourado / Cobre */
-  --color-gold:         #C9A84C;
-  --color-gold-light:   #E8C968;
-  --color-gold-dark:    #8B6914;
-  --color-copper:       #B87333;
+  /* Verde Camaleão (Instagram) */
+  --color-gold:         #00C26B;
+  --color-gold-light:   #22E68B;
+  --color-gold-dark:    #008F4F;
+  --color-copper:       #004D2C;
 
-  /* Verde acento (camaleão) */
-  --color-accent:       #2ECC71;
-  --color-accent-dim:   rgba(46,204,113,0.15);
+  /* Acento */
+  --color-accent:       #00C26B;
+  --color-accent-dim:   rgba(0,194,107,0.15);
 
   /* Texto */
   --color-text:         #F0EDE6;
@@ -29,14 +29,14 @@
 
   /* Glassmorphism */
   --glass-bg:           rgba(13,27,42,0.6);
-  --glass-border:       rgba(201,168,76,0.15);
+  --glass-border:       rgba(0,194,107,0.15);
   --glass-shadow:       0 8px 32px rgba(0,0,0,0.45);
   --glass-blur:         blur(18px);
 
   /* Gradientes */
-  --grad-gold:          linear-gradient(135deg, #C9A84C, #E8C968, #B87333);
+  --grad-gold:          linear-gradient(135deg, #00C26B, #22E68B, #004D2C);
   --grad-dark:          linear-gradient(135deg, #04050D 0%, #0D1B2A 100%);
-  --grad-hero:          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.25) 0%, transparent 70%);
+  --grad-hero:          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,194,107,0.25) 0%, transparent 70%);
   --grad-surface:       linear-gradient(180deg, rgba(13,27,42,0.9) 0%, rgba(4,5,13,0.95) 100%);
 
   /* Tipografia */
@@ -170,11 +170,11 @@ img, video { max-width: 100%; display: block; }
    UTILITÁRIOS — EFEITOS VISUAIS
    ============================================================ */
 .glow-gold {
-  box-shadow: 0 0 30px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.1);
+  box-shadow: 0 0 30px rgba(0,194,107,0.3), 0 0 60px rgba(0,194,107,0.1);
 }
 
 .glow-gold-text {
-  text-shadow: 0 0 30px rgba(201,168,76,0.5);
+  text-shadow: 0 0 30px rgba(0,194,107,0.5);
 }
 
 .border-gold {
@@ -204,8 +204,8 @@ img, video { max-width: 100%; display: block; }
 }
 
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.3); }
-  50%       { box-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 80px rgba(201,168,76,0.2); }
+  0%, 100% { box-shadow: 0 0 20px rgba(0,194,107,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(0,194,107,0.6), 0 0 80px rgba(0,194,107,0.2); }
 }
 
 @keyframes spin-slow {
@@ -229,13 +229,13 @@ img, video { max-width: 100%; display: block; }
 }
 
 @keyframes borderFlow {
-  0%, 100% { border-color: rgba(201,168,76,0.2); }
-  50%       { border-color: rgba(201,168,76,0.8); }
+  0%, 100% { border-color: rgba(0,194,107,0.2); }
+  50%       { border-color: rgba(0,194,107,0.8); }
 }
 
 .animate-float   { animation: float 4s ease-in-out infinite; }
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.3) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0,194,107,0.3) 50%, transparent 100%);
   background-size: 200% auto;
   animation: shimmer 2.5s linear infinite;
 }
@@ -277,7 +277,7 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+  box-shadow: 0 0 0 3px rgba(0,194,107,0.15);
 }
 
 input::placeholder, textarea::placeholder {

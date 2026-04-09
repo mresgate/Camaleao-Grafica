@@ -4,7 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
 
-function Card({ position, rotation, color = "#C9A84C" }) {
+function Card({ position, rotation, color = "#00C26B" }) {
   const meshRef = useRef();
 
   useFrame((state) => {
@@ -68,8 +68,8 @@ export default function FloatingProducts() {
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
         <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8b5cf6" />
         
-        <Card position={[-3, 1.5, 0]} rotation={[0.4, 0.5, 0]} color="#C9A84C" />
-        <Card position={[4, -1, 1]} rotation={[-0.2, -0.4, 0.2]} color="#C9A84C" />
+        <Card position={[-3, 1.5, 0]} rotation={[0.4, 0.5, 0]} color="#00C26B" />
+        <Card position={[4, -1, 1]} rotation={[-0.2, -0.4, 0.2]} color="#00C26B" />
         <Flyer position={[2.5, 2, -1]} rotation={[0.2, -0.3, 0.5]} color="#22c55e" />
         <Flyer position={[-4, -2, 0]} rotation={[-0.5, 0.2, -0.2]} color="#8b5cf6" />
 

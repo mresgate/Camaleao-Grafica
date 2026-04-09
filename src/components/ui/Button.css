@@ -31,16 +31,16 @@
 .btn--gold {
   background: var(--grad-gold);
   color: #0A0A0F;
-  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 194, 107, 0.25);
 }
-.btn--gold:hover { box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4); }
+.btn--gold:hover { box-shadow: 0 6px 30px rgba(0, 194, 107, 0.4); }
 
 .btn--outline {
   background: transparent;
   border: 1px solid var(--color-gold);
   color: var(--color-gold);
 }
-.btn--outline:hover { background: rgba(201, 168, 76, 0.1); }
+.btn--outline:hover { background: rgba(0, 194, 107, 0.1); }
 
 .btn--ghost {
   background: rgba(255, 255, 255, 0.06);

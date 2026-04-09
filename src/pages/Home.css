@@ -19,8 +19,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 194, 107, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 107, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
 }
@@ -53,7 +53,7 @@
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(0, 194, 107, 0.15);
 }
 
 .hero-orb--1 {
@@ -71,7 +71,7 @@
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
-  border-color: rgba(201, 168, 76, 0.08);
+  border-color: rgba(0, 194, 107, 0.08);
   animation: spin-slow 25s linear infinite reverse;
 }
 
@@ -94,9 +94,9 @@
   color: var(--color-gold);
   margin-bottom: 1.5rem;
   padding: 0.4rem 1rem;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(0, 194, 107, 0.3);
   border-radius: var(--radius-full);
-  background: rgba(201, 168, 76, 0.06);
+  background: rgba(0, 194, 107, 0.06);
 }
 
 .hero-eyebrow-dot {
@@ -241,7 +241,7 @@
 .categoria-card:hover {
   color: var(--color-text);
   transform: translateY(-5px);
-  border-color: rgba(201, 168, 76, 0.4);
+  border-color: rgba(0, 194, 107, 0.4);
 }
 
 .categoria-card:hover::before { opacity: 0.04; }
@@ -312,8 +312,8 @@
 .diferencial-icon {
   width: 52px;
   height: 52px;
-  background: rgba(201, 168, 76, 0.1);
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: rgba(0, 194, 107, 0.1);
+  border: 1px solid rgba(0, 194, 107, 0.25);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -364,7 +364,7 @@
   left: calc(3.5rem + 1rem);
   right: calc(-1.5rem - 0.75rem);
   height: 1px;
-  background: linear-gradient(90deg, rgba(201, 168, 76, 0.4), rgba(201, 168, 76, 0.05));
+  background: linear-gradient(90deg, rgba(0, 194, 107, 0.4), rgba(0, 194, 107, 0.05));
 }
 
 .passo-titulo {
@@ -427,7 +427,7 @@
 
 .pagamento-item:hover {
   border-color: var(--color-gold);
-  background: rgba(201, 168, 76, 0.07);
+  background: rgba(0, 194, 107, 0.07);
 }
 
 .pagamento-icon { font-size: 1.5rem; }
@@ -511,7 +511,7 @@
   position: relative;
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, rgba(13, 27, 42, 0.9) 0%, rgba(4, 5, 13, 0.95) 100%);
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(0, 194, 107, 0.25);
   overflow: hidden;
   text-align: center;
   padding: 5rem 2rem;
@@ -524,7 +524,7 @@
   transform: translateX(-50%);
   width: 600px;
   height: 300px;
-  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(0, 194, 107, 0.2) 0%, transparent 70%);
   pointer-events: none;
 }
 
