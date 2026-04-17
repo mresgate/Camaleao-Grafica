@@ -38,6 +38,7 @@
   --grad-dark:          linear-gradient(135deg, #04050D 0%, #0D1B2A 100%);
   --grad-hero:          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,194,107,0.25) 0%, transparent 70%);
   --grad-surface:       linear-gradient(180deg, rgba(13,27,42,0.9) 0%, rgba(4,5,13,0.95) 100%);
+  --grad-precodex-blue: linear-gradient(135deg, #0ea5e9, #38bdf8, #0284c7);
 
   /* Tipografia */
   --font-display:       'Outfit', sans-serif;
@@ -143,6 +144,13 @@ img, video { max-width: 100%; display: block; }
 
 .text-gradient-accent {
   background: linear-gradient(135deg, var(--color-accent), #27AE60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: var(--grad-precodex-blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

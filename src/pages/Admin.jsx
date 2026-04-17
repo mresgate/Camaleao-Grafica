@@ -50,6 +50,7 @@ export default function Admin() {
   const [adminEmail, setAdminEmail] = useState('');
   const [adminSenha, setAdminSenha] = useState('');
   const [adminErro, setAdminErro] = useState('');
+  const [configModal, setConfigModal] = useState(null);
 
   const handleAdminLogin = () => {
     const res = login(adminEmail, adminSenha);
@@ -275,7 +276,7 @@ export default function Admin() {
                   <h2 className="admin-section-title">Configurações</h2>
                   <div className="admin-config-grid">
                     {['Métodos de Envio', 'Gateways de Pagamento', 'Banners do Site', 'Textos & SEO', 'Promoções & Cupons', 'Notificações'].map(item => (
-                      <button key={item} className="admin-config-item glass">
+                      <button key={item} className="admin-config-item glass" onClick={() => setConfigModal(item)}>
                         <Settings size={22} />
                         <span>{item}</span>
                       </button>
@@ -283,6 +284,166 @@ export default function Admin() {
                   </div>
                 </motion.div>
               )}
+
+              {/* Config Modals */}
+              <AnimatePresence>
+                {configModal && (
+                  <motion.div 
+                    className="admin-modal-overlay"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={() => setConfigModal(null)}
+                  >
+                    <motion.div 
+                      className="admin-modal glass"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      onClick={e => e.stopPropagation()}
+                    >
+                      <div className="admin-modal-header">
+                        <h3>{configModal}</h3>
+                        <button className="admin-modal-close" onClick={() => setConfigModal(null)}>✕</button>
+                      </div>
+                      <div className="admin-modal-body">
+                        {configModal === 'Métodos de Envio' && (
+                          <div className="admin-config-form">
+                            <div className="admin-form-group">
+                              <label>Nome do Método</label>
+                              <input type="text" placeholder="Ex: Correios PAC" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Preço Base (R$)</label>
+                              <input type="number" placeholder="0.00" step="0.01" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Prazo de Entrega (dias)</label>
+                              <input type="number" placeholder="5" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>
+                                <input type="checkbox" /> Ativo
+                              </label>
+                            </div>
+                            <Button variant="gold" onClick={() => setConfigModal(null)}>Salvar</Button>
+                          </div>
+                        )}
+                        {configModal === 'Gateways de Pagamento' && (
+                          <div className="admin-config-form">
+                            <div className="admin-form-group">
+                              <label>Nome do Gateway</label>
+                              <input type="text" placeholder="Ex: Mercado Pago" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>API Key</label>
+                              <input type="password" placeholder="Sua chave de API" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Token de Acesso</label>
+                              <input type="password" placeholder="Token de acesso" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>
+                                <input type="checkbox" /> Modo Sandbox
+                              </label>
+                            </div>
+                            <Button variant="gold" onClick={() => setConfigModal(null)}>Salvar</Button>
+                          </div>
+                        )}
+                        {configModal === 'Banners do Site' && (
+                          <div className="admin-config-form">
+                            <div className="admin-form-group">
+                              <label>Título do Banner</label>
+                              <input type="text" placeholder="Ex: Promoção de Verão" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Subtítulo</label>
+                              <input type="text" placeholder="Texto secundário" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>URL da Imagem</label>
+                              <input type="text" placeholder="/banner-promo.jpg" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Link de Destino</label>
+                              <input type="text" placeholder="/produtos" />
+                            </div>
+                            <Button variant="gold" onClick={() => setConfigModal(null)}>Salvar</Button>
+                          </div>
+                        )}
+                        {configModal === 'Textos & SEO' && (
+                          <div className="admin-config-form">
+                            <div className="admin-form-group">
+                              <label>Título da Página (Meta Title)</label>
+                              <input type="text" placeholder="Camaleão - Loja Online" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Descrição (Meta Description)</label>
+                              <textarea rows="3" placeholder="Descrição para motores de busca..."></textarea>
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Palavras-chave</label>
+                              <input type="text" placeholder="camaleão, loja, produtos" />
+                            </div>
+                            <Button variant="gold" onClick={() => setConfigModal(null)}>Salvar</Button>
+                          </div>
+                        )}
+                        {configModal === 'Promoções & Cupons' && (
+                          <div className="admin-config-form">
+                            <div className="admin-form-group">
+                              <label>Código do Cupom</label>
+                              <input type="text" placeholder="Ex: VERAO2024" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Desconto (%)</label>
+                              <input type="number" placeholder="10" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Validade</label>
+                              <input type="date" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>Uso Máximo</label>
+                              <input type="number" placeholder="100" />
+                            </div>
+                            <Button variant="gold" onClick={() => setConfigModal(null)}>Criar Cupom</Button>
+                          </div>
+                        )}
+                        {configModal === 'Notificações' && (
+                          <div className="admin-config-form">
+                            <div className="admin-form-group">
+                              <label>Email de Notificação</label>
+                              <input type="email" placeholder="admin@camaleao.com.br" />
+                            </div>
+                            <div className="admin-form-group">
+                              <label>
+                                <input type="checkbox" defaultChecked /> Novos Pedidos
+                              </label>
+                            </div>
+                            <div className="admin-form-group">
+                              <label>
+                                <input type="checkbox" defaultChecked /> Clientes Novos
+                              </label>
+                            </div>
+                            <div className="admin-form-group">
+                              <label>
+                                <input type="checkbox" defaultChecked /> Baixo Estoque
+                              </label>
+                            </div>
+                            <div className="admin-form-group">
+                              <label>
+                                <input type="checkbox" /> Marketing
+                              </label>
+                            </div>
+                            <Button variant="gold" onClick={() => setConfigModal(null)}>Salvar</Button>
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </AnimatePresence>
           </div>
         </div>

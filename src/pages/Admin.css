@@ -163,6 +163,58 @@
 .admin-config-item:hover { border-color: var(--color-gold); color: var(--color-gold); background: rgba(201,168,76,0.06); }
 .admin-config-item svg { color: var(--color-gold); flex-shrink: 0; }
 
+/* Modal */
+.admin-modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; padding: 1rem;
+}
+.admin-modal {
+  max-width: 500px; width: 100%; max-height: 90vh;
+  border-radius: var(--radius-xl); overflow-y: auto;
+  display: flex; flex-direction: column;
+}
+.admin-modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem; border-bottom: 1px solid var(--color-border);
+}
+.admin-modal-header h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; }
+.admin-modal-close {
+  width: 32px; height: 32px; border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.05); border: 1px solid var(--color-border);
+  color: var(--color-text-muted); font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition-fast);
+}
+.admin-modal-close:hover { background: rgba(220,38,38,0.1); color: #F87171; border-color: rgba(220,38,38,0.3); }
+.admin-modal-body { padding: 1.5rem; }
+
+/* Config Form */
+.admin-config-form { display: flex; flex-direction: column; gap: 1rem; }
+.admin-form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.admin-form-group label { font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); }
+.admin-form-group input,
+.admin-form-group textarea,
+.admin-form-group select {
+  padding: 0.7rem 1rem; border-radius: var(--radius-md);
+  background: var(--color-bg-alt); border: 1px solid var(--color-border);
+  color: var(--color-text); font-size: 0.9rem; outline: none;
+  transition: all var(--transition-fast);
+}
+.admin-form-group input:focus,
+.admin-form-group textarea:focus,
+.admin-form-group select:focus {
+  border-color: var(--color-gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+}
+.admin-form-group textarea { resize: vertical; min-height: 80px; }
+.admin-form-group input[type="checkbox"] {
+  width: auto; height: auto; margin-right: 0.5rem;
+}
+.admin-form-group label:has(input[type="checkbox"]) {
+  flex-direction: row; align-items: center; cursor: pointer;
+}
+
 @media (max-width: 1100px) {
   .admin-kpis { grid-template-columns: repeat(2, 1fr); }
   .admin-config-grid { grid-template-columns: repeat(2, 1fr); }

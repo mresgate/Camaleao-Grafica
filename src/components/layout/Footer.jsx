@@ -130,7 +130,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Camaleão Soluções Gráficas · CNAE C-1821-1/00 · Todos os direitos reservados</p>
-          <p>Desenvolvido por <span className="text-gradient-gold">Precodex Solutions</span></p>
+          <p>Desenvolvido por <a href="https://precodexsolutions.pt" target="_blank" rel="noopener" className="text-gradient-blue">Precodex Solutions</a></p>
         </div>
       </div>
     </footer>
