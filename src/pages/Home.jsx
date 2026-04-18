@@ -32,9 +32,12 @@ const passos = [
 ];
 
 const depoimentos = [
-  { nome: 'Ana Ferreira', cargo: 'Proprietária · Café Aurora', texto: 'Os cardápios ficaram lindíssimos! A qualidade superou todas as minhas expectativas. Já fiz 3 pedidos.', nota: 5 },
-  { nome: 'Carlos Mendes', cargo: 'CEO · StartTech RN', texto: 'Cartões de visita premium que impressionam qualquer cliente. Prazo cumprido e arte revisada sem custo extra.', nota: 5 },
-  { nome: 'Maria Costa', cargo: 'Designer Freelancer', texto: 'Parceria perfeita! Entrego o arquivo e eles cuidam do resto. Qualidade consistente em todos os pedidos.', nota: 5 },
+  { nome: 'Felipe Augusto De Sena', cargo: 'Avaliação Google', texto: 'Uma empresa muito profissional que atende muito bem seus clientes e de um trabalho espetacular', nota: 5 },
+  { nome: 'andrezza brito', cargo: 'Avaliação Google', texto: 'Ótima gráfica. Atendimento incrível e produtos de qualidade!', nota: 5 },
+  { nome: 'Gustavo Negócio', cargo: 'Avaliação Google', texto: 'Excelente! O proprietário faz o possível pra resolver seu problema, super atencioso, atendimento impecável, e funcionam de domingo a domingo.', nota: 5 },
+  { nome: 'Álvaro Brandão', cargo: 'Avaliação Google', texto: 'Serviço excelente, atendimento rápido e vale cada centavo investido, fiquei muito satisfeito com a rapidez e a qualidade que meus cartas cartões de visitas e voucher foram elaborados.', nota: 5 },
+  { nome: 'arthur costa', cargo: 'Avaliação Google', texto: 'Gráfica ótima! Super pontual, atendimento e preços incríveis. Indico  demais!!!! Melhor de Natal!!!', nota: 5 },
+  { nome: 'Thayandra Melo', cargo: 'Avaliação Google', texto: 'Melhor gráfica da região. Um super atendimento, me entregou no prazo e um preço maravilhoso. Super recomendo', nota: 5 },
 ];
 
 export default function Home() {
