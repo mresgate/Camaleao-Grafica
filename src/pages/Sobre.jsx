@@ -25,13 +25,22 @@ export default function Sobre() {
       {/* Hero */}
       <section className="sobre-hero">
         <div className="sobre-hero-bg" />
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <div className="container sobre-hero-grid">
+          <motion.div className="sobre-hero-text" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="section-eyebrow">Nossa História</span>
             <h1>Somos a <span className="text-gradient-gold">Camaleão Gráfica</span></h1>
             <p className="sobre-hero-sub">
               Mais de 6 anos transformando ideias em impressões. Da Parnamirim para todo o Brasil — com qualidade, compromisso e paixão pelo que fazemos.
             </p>
+          </motion.div>
+          <motion.div className="sobre-hero-video" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
+            <video 
+              src="/Video 2026-04-18 at 21.06.55.mp4" 
+              controls
+              autoPlay
+              playsInline 
+              className="video-element"
+            />
           </motion.div>
         </div>
       </section>
