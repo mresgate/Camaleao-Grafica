@@ -68,7 +68,12 @@ export default function Produtos() {
           >
             <span className="section-eyebrow">Catálogo Completo</span>
             <h1 className="produtos-title">Nossos <span className="text-gradient-gold">Produtos</span></h1>
-            <p className="produtos-subtitle">Qualidade gráfica premium para o seu negócio. Personalização total com entrega para todo o Brasil.</p>
+            <p className="produtos-subtitle">
+              Qualidade gráfica premium para o seu negócio. Personalização total com entrega para todo o Brasil.
+              <br />
+              <br />
+              <strong>Alguns dos nossos serviços:</strong> serviços gráficos, brindes e personalizados, embalagens, criação de artes, papelaria em geral, itens para formatura e demais eventos, entre outros.
+            </p>
           </motion.div>
         </div>
       </section>

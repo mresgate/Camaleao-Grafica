@@ -24,7 +24,18 @@ export default function Carrinho() {
   const [freteSel, setFreteSel] = useState(frete?.id || null);
 
   const totalCarrinho = itens.reduce((acc, i) => acc + i.preco * i.quantidade, 0);
-  const totalComFrete = totalCarrinho + (frete ? frete.preco : 0);
+  const temFreteGratisLocal = totalCarrinho >= 200;
+
+  const getFretePreco = (freteOp) => {
+    if (!freteOp) return 0;
+    if (temFreteGratisLocal && (freteOp.id === 'pac' || freteOp.id === 'sedex' || freteOp.id === 'jadlog')) {
+      return 0; // Você pode limitar a quais métodos são grátis, aqui aplicando a todos ou pode criar um método específico. Vamos manter o preço original, mas dar desconto no calculo.
+    }
+    return freteOp.preco;
+  };
+
+  const calcularPrecoFreteAplicado = (op) => temFreteGratisLocal ? 0 : op.preco;
+  const totalComFrete = totalCarrinho + (frete ? calcularPrecoFreteAplicado(frete) : 0);
 
   const calcularFrete = async () => {
     const cepLimpo = cep.replace(/\D/g, '');
@@ -171,7 +182,7 @@ export default function Carrinho() {
                             <span className="carrinho-frete-prazo">{op.prazo}</span>
                           </div>
                           <span className="carrinho-frete-preco">
-                            {op.preco === 0 ? 'Grátis' : `R$ ${op.preco.toFixed(2).replace('.', ',')}`}
+                            {calcularPrecoFreteAplicado(op) === 0 ? 'Grátis' : `R$ ${calcularPrecoFreteAplicado(op).toFixed(2).replace('.', ',')}`}
                           </span>
                         </button>
                       ))}
@@ -188,8 +199,8 @@ export default function Carrinho() {
                   <span>R$ {totalCarrinho.toFixed(2).replace('.', ',')}</span>
                 </div>
                 <div className="carrinho-resumo-linha">
-                  <span>Frete</span>
-                  <span>{frete ? (frete.preco === 0 ? 'Grátis' : `R$ ${frete.preco.toFixed(2).replace('.', ',')}`) : '—'}</span>
+                  <span>Frete {temFreteGratisLocal && <span className="text-gradient-gold" style={{ fontSize: '0.75rem', marginLeft: '0.25rem' }}>(Grátis)</span>}</span>
+                  <span>{frete ? (calcularPrecoFreteAplicado(frete) === 0 ? 'Grátis' : `R$ ${calcularPrecoFreteAplicado(frete).toFixed(2).replace('.', ',')}`) : '—'}</span>
                 </div>
                 <div className="carrinho-resumo-total">
                   <span>Total</span>

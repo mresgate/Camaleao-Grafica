@@ -18,10 +18,10 @@ const fadeUp = {
 };
 
 const diferenciais = [
-  { icon: <Zap size={26} />, titulo: 'Entrega Expressa', desc: 'Produção em até 24h para pedidos urgentes. Nunca perca um prazo.' },
+  { icon: <Zap size={26} />, titulo: 'Produção Ágil', desc: 'Produção média de 48h. Cumpra sempre os seus prazos com eficiência.' },
   { icon: <Shield size={26} />, titulo: 'Qualidade Garantida', desc: 'Revisão de arte gratuita. Se não ficar perfeito, refazemos sem custo.' },
   { icon: <Star size={26} />, titulo: 'Preço Justo', desc: 'Sem surpresas. O preço que você vê é o que você paga.' },
-  { icon: <Clock size={26} />, titulo: 'Atendimento Ágil', desc: 'Resposta via WhatsApp em menos de 1h durante o horário comercial.' },
+  { icon: <Clock size={26} />, titulo: 'Atendimento Ágil', desc: 'Resposta via WhatsApp em até 30 minutos durante o horário comercial.' },
 ];
 
 const passos = [
@@ -117,9 +117,9 @@ export default function Home() {
             custom={4}
           >
             {[
-              { val: '+5mil', label: 'Pedidos Entregues' },
+              { val: '+30mil', label: 'Pedidos Entregues' },
               { val: '4.9★', label: 'Avaliação Média' },
-              { val: '24h', label: 'Entrega Expressa' },
+              { val: '48h', label: 'Produção Média' },
               { val: '100%', label: 'Arte Revisada' },
             ].map((s, i) => (
               <div key={i} className="hero-stat">
@@ -188,6 +188,9 @@ export default function Home() {
             <div>
               <span className="section-eyebrow">Mais Vendidos</span>
               <h2>Produtos em Destaque</h2>
+              <p style={{ marginTop: '1rem', color: 'rgba(255, 255, 255, 0.7)', maxWidth: '600px', fontSize: '1.05rem', lineHeight: '1.6' }}>
+                <strong>Alguns dos nossos serviços:</strong> serviços gráficos, brindes e personalizados, embalagens, criação de artes, papelaria em geral, itens para formatura e demais eventos, entre outros.
+              </p>
             </div>
             <Link to="/produtos">
               <Button variant="outline" size="sm" iconRight={<ArrowRight size={16} />}>

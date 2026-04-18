@@ -13,9 +13,9 @@ const valores = [
 ];
 
 const timeline = [
-  { ano: '2015', evento: 'Fundação da Camaleão', desc: 'A empresa nasce em Parnamirim, RN, com o objetivo de democratizar a impressão de qualidade.' },
-  { ano: '2017', evento: 'Expansão do Portfólio', desc: 'Ampliação para embalagens personalizadas e brindes corporativos, atendendo grandes empresas do RN.' },
-  { ano: '2020', evento: 'Digitalização', desc: 'Implementação do sistema de orçamentos online e atendimento via WhatsApp, expandindo o alcance.' },
+  { ano: '2018', evento: 'Fundação da Camaleão', desc: 'A empresa nasce em Parnamirim, RN, com o objetivo de democratizar a impressão de qualidade.' },
+  { ano: '2020', evento: 'Expansão do Portfólio', desc: 'Ampliação para embalagens personalizadas e brindes corporativos, atendendo grandes empresas do RN.' },
+  { ano: '2022', evento: 'Digitalização', desc: 'Implementação do sistema de orçamentos online e atendimento via WhatsApp, expandindo o alcance.' },
   { ano: '2024', evento: 'Loja Online', desc: 'Lançamento da loja e-commerce, tornando possível pedidos de todo o Brasil com entrega rastreada.' },
 ];
 
@@ -30,7 +30,7 @@ export default function Sobre() {
             <span className="section-eyebrow">Nossa História</span>
             <h1>Somos a <span className="text-gradient-gold">Camaleão Gráfica</span></h1>
             <p className="sobre-hero-sub">
-              Mais de 9 anos transformando ideias em impressões. Da Parnamirim para todo o Brasil — com qualidade, compromisso e paixão pelo que fazemos.
+              Mais de 6 anos transformando ideias em impressões. Da Parnamirim para todo o Brasil — com qualidade, compromisso e paixão pelo que fazemos.
             </p>
           </motion.div>
         </div>
@@ -49,13 +49,16 @@ export default function Sobre() {
               <span className="section-eyebrow">Quem Somos</span>
               <h2>Dedicação e comprometimento com o seu empreendimento</h2>
               <p>
-                A Camaleão Soluções Gráficas é uma empresa pernambucana sediada em Parnamirim, RN,
+                A Camaleão Soluções Gráficas é uma empresa potiguar sediada em Parnamirim, RN,
                 especializada em serviços de pré-impressão e produção gráfica de alto padrão.
                 Atuamos com foco na qualidade do produto, no atendimento personalizado e na responsabilidade social.
               </p>
               <p>
                 Nossa missão é ser a parceira estratégica do seu negócio, oferecendo impressões que constroem marcas
                 fortes e geram resultados reais — desde o cartão de visita até as embalagens premium.
+              </p>
+              <p>
+                <strong>Alguns dos nossos serviços:</strong> serviços gráficos, brindes e personalizados, embalagens, criação de artes, papelaria em geral, itens para formatura e demais eventos, entre outros.
               </p>
               <div className="sobre-checks">
                 {['Equipa especializada e apaixonada', 'Equipamentos de última geração', 'Atendimento personalizado', 'Entrega para todo o Brasil'].map(c => (
@@ -74,10 +77,10 @@ export default function Sobre() {
               viewport={{ once: true }}
             >
               {[
-                { icon: <Award size={28}/>, val: '+5.000', label: 'Pedidos Entregues' },
-                { icon: <Users size={28}/>, val: '+800', label: 'Clientes Ativos' },
-                { icon: <Clock size={28}/>, val: '9 anos', label: 'De Experiência' },
-                { icon: <MapPin size={28}/>, val: '26 estados', label: 'Alcance Nacional' },
+                { icon: <Award size={28} />, val: '+30.000', label: 'Pedidos Entregues' },
+                { icon: <Users size={28} />, val: '+800', label: 'Clientes Ativos' },
+                { icon: <Clock size={28} />, val: '6 anos', label: 'De Experiência' },
+                { icon: <MapPin size={28} />, val: '26 estados', label: 'Alcance Nacional' },
               ].map((card, i) => (
                 <div key={i} className="sobre-info-card glass">
                   <div className="sobre-info-icon">{card.icon}</div>
@@ -151,7 +154,7 @@ export default function Sobre() {
           <h2>Pronto para trabalhar juntos?</h2>
           <p style={{ marginBottom: '2rem', fontSize: '1.05rem' }}>Entre em contacto ou explore o nosso catálogo de produtos.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/produtos"><Button variant="gold" size="lg" iconRight={<ArrowRight size={18}/>}>Ver Produtos</Button></Link>
+            <Link to="/produtos"><Button variant="gold" size="lg" iconRight={<ArrowRight size={18} />}>Ver Produtos</Button></Link>
             <Link to="/contacto"><Button variant="outline" size="lg">Entrar em Contacto</Button></Link>
           </div>
         </div>

@@ -69,7 +69,11 @@ export default function Navbar() {
             <span><Mail size={12} /> camaleao.grafica@hotmail.com</span>
           </div>
           <div className="navbar-topbar-info">
-            <span>Parnamirim, RN · Seg–Sex 8h–18h</span>
+            <span style={{ color: 'var(--color-gold)', fontWeight: 600 }}>
+              Entrega grátis acima de R$ 200 (Natal e Parnamirim/RN)
+            </span>
+            <span>·</span>
+            <span>Dom–Dom 9h–21h</span>
           </div>
         </div>
       </div>

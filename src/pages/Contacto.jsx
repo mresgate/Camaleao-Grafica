@@ -9,7 +9,7 @@ const infoItems = [
   { icon: <Phone size={22}/>, titulo: 'Telefone / WhatsApp', valor: '(84) 99847-5461', href: 'tel:+5584998475461' },
   { icon: <Mail size={22}/>, titulo: 'E-mail', valor: 'camaleao.grafica@hotmail.com', href: 'mailto:camaleao.grafica@hotmail.com' },
   { icon: <MapPin size={22}/>, titulo: 'Endereço', valor: 'R. Aeroporto dos Guararapes, 11\nParque Industrial · Parnamirim/RN\nCEP 59149-323', href: null },
-  { icon: <Clock size={22}/>, titulo: 'Horário', valor: 'Segunda a Sexta: 08h00–18h00\nSábado: 08h00–12h00', href: null },
+  { icon: <Clock size={22}/>, titulo: 'Horário', valor: 'Domingo a Domingo: 09h00–21h00', href: null },
 ];
 
 export default function Contacto() {
@@ -83,7 +83,7 @@ export default function Contacto() {
                 <div className="contacto-wa-icon"><MessageSquare size={26} /></div>
                 <div>
                   <div className="contacto-wa-titulo">Atendimento Imediato</div>
-                  <div className="contacto-wa-sub">Resposta em menos de 1h via WhatsApp</div>
+                  <div className="contacto-wa-sub">Resposta em até 30 minutos via WhatsApp</div>
                 </div>
                 <span className="contacto-wa-btn">Iniciar Chat</span>
               </motion.a>
@@ -167,7 +167,7 @@ export default function Contacto() {
                     Enviar Mensagem
                   </Button>
                   <p className="contacto-form-obs">
-                    * Campos obrigatórios. Respondemos em até 24h em dias úteis.
+                    * Campos obrigatórios. Respondemos em até 24h.
                   </p>
                 </form>
               )}

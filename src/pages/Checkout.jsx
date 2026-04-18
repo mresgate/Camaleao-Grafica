@@ -27,7 +27,10 @@ export default function Checkout() {
   const [cartao, setCartao] = useState({ numero: '', nome: '', validade: '', cvv: '', parcelas: '1x sem juros' });
 
   const total = itens.reduce((acc, i) => acc + i.preco * i.quantidade, 0);
-  const totalComFrete = total + (frete?.preco || 0);
+  const temFreteGratisLocal = total >= 200;
+  const calcularPrecoFreteAplicado = (op) => temFreteGratisLocal ? 0 : op?.preco || 0;
+  const precoFreteAplicado = calcularPrecoFreteAplicado(frete);
+  const totalComFrete = total + precoFreteAplicado;
 
   const upd = (setter) => (e) => setter(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
@@ -39,7 +42,7 @@ export default function Checkout() {
     const novoPedido = {
       itens: itens.map(i => ({ nome: i.produto.nome, qtd: i.quantidade, subtotal: i.preco * i.quantidade })),
       total: totalComFrete,
-      frete: frete?.preco || 0,
+      frete: precoFreteAplicado,
       pagamento,
       dados,
       endereco
@@ -320,8 +323,8 @@ export default function Checkout() {
               <span>Subtotal</span><span>R$ {total.toFixed(2).replace('.', ',')}</span>
             </div>
             <div className="checkout-resumo-linha">
-              <span>Frete</span>
-              <span>{frete ? (frete.preco === 0 ? 'Grátis' : `R$ ${frete.preco.toFixed(2).replace('.', ',')}`) : '—'}</span>
+              <span>Frete {temFreteGratisLocal && <span className="text-gradient-gold" style={{ fontSize: '0.75rem', marginLeft: '0.25rem' }}>(Grátis)</span>}</span>
+              <span>{frete ? (precoFreteAplicado === 0 ? 'Grátis' : `R$ ${precoFreteAplicado.toFixed(2).replace('.', ',')}`) : '—'}</span>
             </div>
             <div className="checkout-resumo-total">
               <span>Total</span>
